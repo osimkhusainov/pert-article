@@ -9,7 +9,7 @@ app.use(express.json());
 app.use("/articles", articleRoutes);
 app.use(express.static(path.join(__dirname, "client/build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/buld/index.html"));
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
 
 module.exports = app;
