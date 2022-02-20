@@ -19,7 +19,7 @@ const EditArticle = ({ article }) => {
     <Fragment>
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-primary btn-edit"
         data-bs-toggle="modal"
         data-bs-target={`#id${article.id}`}
       >
@@ -59,7 +59,7 @@ const EditArticle = ({ article }) => {
               />
               <textarea
                 type="text"
-                className="form-control mt-2"
+                className="form-control mt-2 text-block"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
               />

@@ -13,6 +13,35 @@
   }
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-edit {
+  width: 15%;
+}
+
+.dates {
+  color: grey
+}
+
+.created {
+  color: rgb(5, 94, 19)
+}
+
+.updated {
+  color: rgb(158, 110, 6)
+}
+
+.text-block {
+  height: 300px;
+}
+
+.btn-danger {
+  width: 15%;
+}
+
 .row {
   display: block;
   width: 100%;
