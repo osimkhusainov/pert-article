@@ -13,7 +13,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "tests": "jest",
     "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install && npm run buld"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
