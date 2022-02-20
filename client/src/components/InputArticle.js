@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-import { axiosInstance } from "../config";
 import axios from "axios";
 
 const InputArticle = () => {

@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
 import EditArticle from "./EditArticle";
-import { axiosInstance } from "../config";
 import axios from "axios";
 
 const ListArticles = () => {
