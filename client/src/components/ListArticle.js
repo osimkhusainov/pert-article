@@ -1,13 +1,14 @@
 import React, { Fragment, useEffect, useState } from "react";
 import EditArticle from "./EditArticle";
+import { axiosInstance } from "../config";
 
 const ListArticles = () => {
   const [articles, setArticles] = useState([]);
 
   const getArticles = async () => {
     try {
-      const response = await fetch("/articles");
-      const data = await response.json();
+      const response = await axiosInstance.get("/articles");
+      const data = await response.data;
       setArticles(data);
     } catch (err) {
       console.error(err.message);
@@ -18,7 +19,7 @@ const ListArticles = () => {
   }, []);
   const deleteArticle = async (id) => {
     try {
-      await fetch(`/articles/${id}`, { method: "DELETE" });
+      await axiosInstance.delete(`/articles/${id}`, { method: "DELETE" });
       setArticles(articles.filter((article) => article.id !== id));
     } catch (err) {
       console.error(err.message);

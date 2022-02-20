@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { axiosInstance } from "../config";
 
 const EditArticle = ({ article }) => {
   const [content, setContent] = useState(article.content);
@@ -8,11 +9,7 @@ const EditArticle = ({ article }) => {
     try {
       e.preventDefault();
       const body = { content, heading };
-      await fetch(`/articles/${article.id}`, {
-        method: "PUT",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(body),
-      });
+      await axiosInstance.put(`/articles/${article.id}`, body);
       window.location = "/";
     } catch (err) {
       console.log(err.message);

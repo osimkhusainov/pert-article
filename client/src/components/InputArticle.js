@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { axiosInstance } from "../config";
 
 const InputArticle = () => {
   const [content, setContent] = useState("");
@@ -7,11 +8,7 @@ const InputArticle = () => {
     e.preventDefault();
     try {
       const body = { content, heading };
-      await fetch("/articles", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(body),
-      });
+      await axiosInstance.post("/articles", body);
       window.location = "/";
     } catch (err) {
       console.error(err.message);
