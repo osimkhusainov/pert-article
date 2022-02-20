@@ -8,6 +8,7 @@
     "npm": "8.1.2"
   },
   "scripts": {
+    "tests": "jest",
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
