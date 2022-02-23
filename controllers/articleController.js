@@ -3,7 +3,7 @@ const pool = require("../db/db");
 exports.createArticle = async (req, res) => {
   try {
     let { content, heading } = req.body;
-    if (heading === undefined || heading === null) heading = "Untitled article";
+    if (heading === "" || heading === null) heading = "Untitled article";
     if (!content && !heading)
       return res.status(400).json({ message: "Empty body" });
     const newTodo = await pool.query(
