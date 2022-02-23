@@ -4,7 +4,8 @@ exports.createArticle = async (req, res) => {
   try {
     let { content, heading } = req.body;
     if (heading === undefined || heading === null) heading = "Untitled article";
-    if (!content && !heading) res.status(400).json({ message: "Empty body" });
+    if (!content && !heading)
+      return res.status(400).json({ message: "Empty body" });
     const newTodo = await pool.query(
       "INSERT INTO article (content, heading, created_at) VALUES($1, $2, NOW()) RETURNING *",
       [content, heading]
