@@ -1,3 +1,2 @@
-Demo версия приложения здесь: https://pern-article.herokuapp.com/ 
+Demo version https://pern-article.herokuapp.com/ 
 
-Не реализованы роуты на фронте
